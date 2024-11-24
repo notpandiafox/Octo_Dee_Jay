@@ -10,7 +10,6 @@ public class Record : MonoBehaviour
     public AudioSource song;
     public AudioSource scratch;
     public KeyCode scrubBack;
-    public int bpm;
     public Vector3 myPosition;
     public ArmLeft armLeft;
     public ArmRight armRight;
