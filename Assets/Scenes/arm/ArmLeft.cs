@@ -3,6 +3,6 @@ using UnityEngine;
 
 public class ArmLeft : MonoBehaviour
 {
-    public Animation scratchAnimation;
+    public Animator scratchAnimation;
     public Animation pressAnimation;
 }
