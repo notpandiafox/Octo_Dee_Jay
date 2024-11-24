@@ -10,6 +10,8 @@ TagManager:
   - J_BUTTON
   - K_BUTTON
   - L_BUTTON
+  - R_BUTTON
+  - T_BUTTON
   layers:
   - Default
   - TransparentFX
