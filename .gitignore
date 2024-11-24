@@ -4,3 +4,6 @@ Assembly-CSharp.csproj
 Library/
 Logs/
 Temp/
+Usersettings/
+.*
+*.sln
