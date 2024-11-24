@@ -50,7 +50,7 @@ public class main : MonoBehaviour
             GameObject.FindGameObjectWithTag("O_BUTTON"),
             Resources.Load<Sprite>("sprites/buttons/O_ON"),
             Resources.Load<Sprite>("sprites/buttons/O_OFF"),
-            Resources.Load<AudioClip>("audio/START BUTTON")
+            Resources.Load<AudioClip>("audio/HI-HAT-OPEN")
         );
         buttons.Add(KeyCode.O, O_Button);
 
@@ -77,9 +77,27 @@ public class main : MonoBehaviour
             GameObject.FindGameObjectWithTag("L_BUTTON"),
             Resources.Load<Sprite>("sprites/buttons/L_ON"),
             Resources.Load<Sprite>("sprites/buttons/L_OFF"),
-            Resources.Load<AudioClip>("audio/START BUTTON")
+            Resources.Load<AudioClip>("audio/CLAP")
         );
         buttons.Add(KeyCode.L, L_Button);
+
+        Button T_Button = m_GameObject.AddComponent<Button>();
+        T_Button.initialize(
+            GameObject.FindGameObjectWithTag("T_BUTTON"),
+            Resources.Load<Sprite>("sprites/buttons/T_ON"),
+            Resources.Load<Sprite>("sprites/buttons/T_OFF"),
+            Resources.Load<AudioClip>("audio/CLAP")
+        );
+        buttons.Add(KeyCode.T, T_Button);
+        
+        Button R_Button = m_GameObject.AddComponent<Button>();
+        R_Button.initialize(
+            GameObject.FindGameObjectWithTag("R_BUTTON"),
+            Resources.Load<Sprite>("sprites/buttons/R_ON"),
+            Resources.Load<Sprite>("sprites/buttons/R_OFF"),
+            Resources.Load<AudioClip>("audio/CLAP")
+        );
+        buttons.Add(KeyCode.R, R_Button);
 
         m_SoundBoard = new SoundBoard(buttons);
     }
@@ -91,7 +109,10 @@ public class main : MonoBehaviour
                 currentEvent.keyCode == KeyCode.O ||
                 currentEvent.keyCode == KeyCode.J ||
                 currentEvent.keyCode == KeyCode.K ||
-                currentEvent.keyCode == KeyCode.L) {
+                currentEvent.keyCode == KeyCode.L ||
+                currentEvent.keyCode == KeyCode.R ||
+                currentEvent.keyCode == KeyCode.T
+                ) {
                     m_SoundBoard.triggerButton(currentEvent.keyCode);
                     StartCoroutine(addDelay(currentEvent.keyCode));
             } 
